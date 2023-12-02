@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Raft
+  - Buildable
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - Raft
+  - Water
+  - UI
+  - Player
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Other
+    uniqueID: 2908932471
+    locked: 0
+  - name: Player
+    uniqueID: 3502172873
+    locked: 0
+  - name: Raft
+    uniqueID: 2962812283
+    locked: 0
+  - name: Item
+    uniqueID: 706199473
+    locked: 0
+  - name: Water
+    uniqueID: 2361089785
+    locked: 0
+  - name: UI
+    uniqueID: 3632277155
+    locked: 0
