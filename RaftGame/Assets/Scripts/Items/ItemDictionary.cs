@@ -33,6 +33,6 @@ public class ItemDictionary : MonoBehaviour
         if(_itemDictionary.TryGetValue(id,out var item)){
             return item;
         }
-        return null;
+        return ReturnItemFromDict("PlaceholderItem");
     }
 }

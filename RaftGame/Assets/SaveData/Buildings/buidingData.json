@@ -1,0 +1,65 @@
+{
+    "buildings": [
+        {
+            "bldName": "BasicRaft",
+            "pos": {
+                "x": 0.0,
+                "y": 0.0
+            }
+        },
+        {
+            "bldName": "BasicRaft",
+            "pos": {
+                "x": 1.0,
+                "y": 0.0
+            }
+        },
+        {
+            "bldName": "BasicRaft",
+            "pos": {
+                "x": 2.0,
+                "y": 0.0
+            }
+        }
+    ],
+    "containers": [
+        {
+            "bldName": "Chest",
+            "pos": {
+                "x": 1.0,
+                "y": 1.0
+            },
+            "inventory": {
+                "contents": [
+                    {
+                        "itemName": "Rock",
+                        "stackSize": 1,
+                        "indexInContainer": 8
+                    },
+                    {
+                        "itemName": "WoodenPlank",
+                        "stackSize": 1,
+                        "indexInContainer": 4
+                    }
+                ]
+            }
+        },
+        {
+            "bldName": "Chest",
+            "pos": {
+                "x": 2.0,
+                "y": 1.0
+            },
+            "inventory": {
+                "contents": [
+                    {
+                        "itemName": "Frog",
+                        "stackSize": 69,
+                        "indexInContainer": 2
+                    }
+                ]
+            }
+        }
+    ],
+    "processors": []
+}

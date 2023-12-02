@@ -368,6 +368,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Panel9Slice
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 5, y: 5, z: 5, w: 5}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59229f8e99504524fb291f8ba80e5497
+      internalID: 30296673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -379,16 +400,26 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      PanelSlice3: 65224929
       Inventory: -1099412103
+      Panel9Slice: 30296673
       XButton: -1883393440
       ChestInventory: -1579229524
       CheckButton: 1931894405
       Heart: -745309173
       DeluxeChestInventory: -1327155331
+      PanelSlice6: -1829649661
+      PanelSlice4: -55995426
       TrashClosed: -1325178551
       ArmorPanel: 1899382263
+      PanelSlice5: 1811195799
+      PanelSlice7: 1572692131
+      UI_0: 1769923228
+      PanelSlice2: -1484928854
       Hotbar: -706945690
       TrashOpen: -1846209358
+      PanelSlice8: -2102227294
+      PanelSlice1: -33267887
       HeartPanel: -560957984
       HalfHeart: 122549319
   spritePackingTag: 

@@ -680,7 +680,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _playerData:
     pos: {x: 0, y: 0}
-    inventory: []
 --- !u!4 &249218672
 Transform:
   m_ObjectHideFlags: 0

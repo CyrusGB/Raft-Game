@@ -52,9 +52,9 @@ public class SaveManager : MonoBehaviour{
         AddBuildable2Data(new StaticBuildingData(new Vector2(0,0), "BasicRaft"));
         AddBuildable2Data(new StaticBuildingData(new Vector2(1,0), "BasicRaft"));
         AddBuildable2Data(new StaticBuildingData(new Vector2(2,0), "BasicRaft"));
-        List<ItemData> items = new(){new ItemData("WoodenPlank", 1, 0)};
-        StorageData chest = new(new Vector2(1,1), "Chest", items);
-
+        List<ItemData> items = new(){new ItemData("WoodenPlank", 1, 0), new ItemData("Rock", 1, 2)};
+        InventoryData inventory = new(items);
+        StorageData chest = new(new Vector2(1,1), "Chest", inventory);
         AddBuildable2Data(chest);
         _playerData = new(){pos = new Vector2(0, .5f)};
         JsonTheScribe.WriteJson(_playerData, _plrPath);
@@ -67,7 +67,7 @@ public class SaveManager : MonoBehaviour{
             case StaticBuildingData stat:
                 _worldData.buildings.Add(stat);
                 break;
-            case StorageData cont:
+            case StorageData cont: 
                 _worldData.containers.Add(cont);
                 break;
             case ItemProcessorData proc:

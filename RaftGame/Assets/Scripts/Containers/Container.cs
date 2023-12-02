@@ -12,7 +12,7 @@ public abstract class Container : InteractableBuildable
 
     public override void SetData(BuildingData newData)
     {
-        Debug.Log(newData);
+        // Debug.Log(newData);
         base.SetData(newData);
         if(ReturnScrObj() is BldContainerObj bld){_containerSize = bld.containerSize;}
     }
@@ -49,21 +49,24 @@ public abstract class Container : InteractableBuildable
     //     }
     // }
 
-    public void ChangeItemInSlot(ItemData newItem, int newIndex, int oldIndex){
+    public void ChangeItemInSlot(ItemData newItem, ItemData oldItem){
         if(_buildingData is ContainerData cont){
-            if(newIndex < _containerSize){
-                if(cont.inv.contents.Count < newIndex + 1){ //Nothing in slot. need to increase list size
-                    for (int i = cont.inv.contents.Count -1; i < newIndex + 1; i++){
-                        cont.inv.contents.Add(new ItemData("empty", 0, i));
-                    }
-                }
-                if(cont.inv.contents[newIndex] is ItemData oldItem){ //Swap items
-                    cont.inv.contents[oldIndex] = oldItem;
-                    oldItem.indexInContainer = oldIndex;
-                    cont.inv.contents[newIndex] = newItem;
-                    newItem.indexInContainer = newIndex;
-                }
+            if(oldItem.itemName == "empty"){
+                newItem.indexInContainer = oldItem.indexInContainer;
+            }else{ //Swap items
+                    int oldIndex = oldItem.indexInContainer;
+                    oldItem.indexInContainer = newItem.indexInContainer;
+                    newItem.indexInContainer = oldIndex;
             }
+            // Debug.Log("newIndex: " + newItem.indexInContainer + " oldIndex: " + oldItem.indexInContainer);
+            // if(newIndex < _containerSize){
+            //     if(cont.inventory.contents[newIndex] is ItemData oldItem){ //Swap items
+            //         cont.inventory.contents[oldIndex] = oldItem;
+            //         oldItem.indexInContainer = oldIndex;
+            //         cont.inventory.contents[newIndex] = newItem;
+            //         newItem.indexInContainer = newIndex;
+            //     }
+            // }
             _panel.LoadItems();
         }
     }

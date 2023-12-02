@@ -21,8 +21,8 @@ public class UISlot : MonoBehaviour, IDropHandler
     }
 
     public void OnDrop(PointerEventData eventData){
-        ItemData itemData = eventData.pointerDrag.GetComponent<Item>().ReturnData();
-        _cont.ChangeItemInSlot(itemData, _indexInCont, itemData.indexInContainer);
+        ItemData newItem = eventData.pointerDrag.GetComponent<Item>().ReturnData();
+        _cont.ChangeItemInSlot(newItem, _itemInSlot == null ? new ItemData("empty", 0, _indexInCont) : _itemInSlot.ReturnData());
     }
 
     public void SetContainer(Container newContainer, int newIndex){

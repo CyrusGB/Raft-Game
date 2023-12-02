@@ -9,8 +9,7 @@ public class SaveData{
 [Serializable]
 public class WorldData : SaveData{
     public List<StaticBuildingData> buildings;
-    // public List<StorageData> containers;
-    public List<ContainerData> containers;
+    public List<StorageData> containers;
     public List<ItemProcessorData> processors;
     public Dictionary<Vector2, BuildingData> dictionary = new();
 }
@@ -33,23 +32,14 @@ public abstract class BuildingData : SaveData{
 }
 
 [Serializable]
-public class StaticBuildingData : BuildingData
-{
+public class StaticBuildingData : BuildingData{
     public StaticBuildingData(Vector2 pos, string bldName) : base(pos, bldName)
     {
     }
 }
 
-[Serializable]
-public abstract class ContainerData : BuildingData{
-    public InventoryData inv;
-    public ContainerData(Vector2 pos, string bldName, List<ItemData> contents = null) : base(pos, bldName){
-        inv.contents = contents;
-    }
-}
-
 [Serializable] 
-public class InventoryData{
+public class InventoryData : SaveData{
     public List<ItemData> contents = new();
 
     public InventoryData(List<ItemData> contents){
@@ -58,19 +48,24 @@ public class InventoryData{
 }
 
 [Serializable]
-public class StorageData : ContainerData //Acts as a non abstract ContainerData
-{
-    public StorageData(Vector2 pos, string bldName, List<ItemData> contents = null) : base(pos, bldName, contents){
-        
+public abstract class ContainerData : BuildingData{
+    public InventoryData inventory;
+    public ContainerData(Vector2 pos, string bldName, InventoryData inventory) : base(pos, bldName)
+    {
+        this.inventory = inventory;
     }
-    
 }
 
 [Serializable]
-public class ItemProcessorData : ContainerData
-{
+public class StorageData : ContainerData{ //Most basic storage type
+    public StorageData(Vector2 pos, string bldName, InventoryData inventory = null) : base(pos, bldName, inventory){
+    }
+}
+
+[Serializable]
+public class ItemProcessorData : ContainerData{
     public float processTimeLeft;
-    public ItemProcessorData(Vector2 pos, string bldName, List<ItemData> contents = null) : base(pos, bldName, contents){
+    public ItemProcessorData(Vector2 pos, string bldName, InventoryData inventory) : base(pos, bldName, inventory){
     }
 }
 
